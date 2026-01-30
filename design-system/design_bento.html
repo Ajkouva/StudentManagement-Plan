@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bento Student | Modern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .bento-card {
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease;
+        }
+
+        .bento-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen p-4 md:p-8 flex flex-col max-w-7xl mx-auto">
+
+    <header class="flex justify-between items-center mb-8 px-2">
+        <div>
+            <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Dashboard</h1>
+            <p class="text-gray-500 font-medium">Welcome back, Alex</p>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="relative">
+                <i data-lucide="bell" class="w-6 h-6 text-gray-500 hover:text-gray-900 cursor-pointer transition"></i>
+                <div class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></div>
+            </div>
+            <img src="https://ui-avatars.com/api/?name=Alex+Design&background=000&color=fff"
+                class="w-10 h-10 rounded-full border-4 border-white shadow-sm cursor-pointer hover:border-gray-200 transition">
+        </div>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6 auto-rows-[minmax(180px,auto)]">
+
+        <!-- Profile Card (Span 2) -->
+        <div
+            class="bento-card col-span-1 md:col-span-2 flex flex-col justify-between bg-black text-white relative overflow-hidden group">
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-indigo-500 rounded-full blur-[80px] opacity-40 group-hover:opacity-60 transition-opacity">
+            </div>
+
+            <div class="relative z-10 flex items-start justify-between">
+                <div>
+                    <div class="bg-white/20 px-3 py-1 rounded-full w-fit backdrop-blur-md mb-4">
+                        <span class="text-xs font-bold">ID: 8492-442</span>
+                    </div>
+                    <h2 class="text-3xl font-bold mb-1">Alex Design</h2>
+                    <p class="text-gray-400">Computer Science • Year 3</p>
+                </div>
+                <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-black">
+                    <i data-lucide="qr-code" class="w-8 h-8"></i>
+                </div>
+            </div>
+
+            <div class="relative z-10 mt-6 pt-6 border-t border-white/10 flex justify-between items-center">
+                <div class="flex gap-2 text-sm text-gray-400">
+                    <span class="text-white font-bold">Status:</span> Active Student
+                </div>
+                <button
+                    class="bg-white text-black px-4 py-2 rounded-xl text-sm font-bold hover:bg-gray-100 transition">View
+                    Full ID</button>
+            </div>
+        </div>
+
+        <!-- Attendance Stats (Span 1) -->
+        <div class="bento-card bg-indigo-50 col-span-1 flex flex-col justify-center items-center text-center">
+            <div
+                class="w-24 h-24 rounded-full border-[6px] border-indigo-200 flex items-center justify-center mb-4 relative">
+                <div class="w-24 h-24 rounded-full border-[6px] border-indigo-600 absolute top-[-6px] left-[-6px]"
+                    style="clip-path: polygon(0 0, 100% 0, 100% 70%, 0 70%); transform: rotate(-45deg);"></div>
+                <span class="text-2xl font-bold text-indigo-900">89%</span>
+            </div>
+            <p class="font-bold text-indigo-900">Attendance</p>
+            <p class="text-xs text-indigo-600 mt-1">Excellent job</p>
+        </div>
+
+        <!-- Upcoming Class (Span 1) -->
+        <div class="bento-card bg-orange-50 col-span-1 flex flex-col justify-between">
+            <div class="icon-box bg-orange-100 text-orange-600 mb-4">
+                <i data-lucide="clock" class="w-6 h-6"></i>
+            </div>
+            <div>
+                <p class="text-xs font-bold text-orange-600 uppercase tracking-wide mb-1">In 30 Mins</p>
+                <h3 class="font-bold text-xl text-gray-900 leading-tight">UX Design Principles</h3>
+                <p class="text-gray-500 text-sm mt-1">Room 404</p>
+            </div>
+        </div>
+
+        <!-- Results / Grade Trend (Span 2) -->
+        <div class="bento-card col-span-1 md:col-span-2">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="font-bold text-lg">Academic Performance</h3>
+                <span class="bg-green-100 text-green-700 font-bold px-2 py-1 rounded-lg text-xs">+2.4% vs last
+                    term</span>
+            </div>
+
+            <!-- Fake Chart Bars -->
+            <div class="flex items-end gap-3 h-32 w-full">
+                <div class="flex-1 bg-gray-100 rounded-t-lg relative group">
+                    <div
+                        class="absolute bottom-0 w-full bg-gray-300 rounded-t-lg h-[60%] group-hover:bg-indigo-400 transition-colors">
+                    </div>
+                </div>
+                <div class="flex-1 bg-gray-100 rounded-t-lg relative group">
+                    <div
+                        class="absolute bottom-0 w-full bg-gray-300 rounded-t-lg h-[75%] group-hover:bg-indigo-400 transition-colors">
+                    </div>
+                </div>
+                <div class="flex-1 bg-gray-100 rounded-t-lg relative group">
+                    <div
+                        class="absolute bottom-0 w-full bg-gray-300 rounded-t-lg h-[50%] group-hover:bg-indigo-400 transition-colors">
+                    </div>
+                </div>
+                <div class="flex-1 bg-gray-100 rounded-t-lg relative group">
+                    <div
+                        class="absolute bottom-0 w-full bg-gray-300 rounded-t-lg h-[85%] group-hover:bg-indigo-400 transition-colors">
+                    </div>
+                </div>
+                <div class="flex-1 bg-gray-100 rounded-t-lg relative group">
+                    <div
+                        class="absolute bottom-0 w-full bg-indigo-600 rounded-t-lg h-[92%] shadow-lg shadow-indigo-200">
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-between mt-3 text-xs text-gray-400 font-medium">
+                <span>Sep</span>
+                <span>Oct</span>
+                <span>Nov</span>
+                <span>Dec</span>
+                <span class="text-indigo-600 font-bold">Jan</span>
+            </div>
+        </div>
+
+        <!-- Notice Board List (Span 2) -->
+        <div class="bento-card col-span-1 md:col-span-2">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-bold text-lg">Notices</h3>
+                <a href="#" class="text-sm text-gray-400 hover:text-black">View All</a>
+            </div>
+
+            <div class="space-y-4">
+                <div class="flex items-start gap-3 p-3 hover:bg-gray-50 rounded-xl transition cursor-pointer">
+                    <div
+                        class="min-w-[40px] h-10 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center">
+                        <i data-lucide="alert-circle" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-gray-900">Exam Schedule Released</h4>
+                        <p class="text-xs text-gray-500 mt-0.5">Final exams start on March 15th. Check your personalized
+                            dates.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3 p-3 hover:bg-gray-50 rounded-xl transition cursor-pointer">
+                    <div
+                        class="min-w-[40px] h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                        <i data-lucide="info" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-gray-900">Library Hours Extended</h4>
+                        <p class="text-xs text-gray-500 mt-0.5">Library is now open 24/7 during study week.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroGlass | Student Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 30%, #E0C3FC 60%, #8EC5FC 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 16px;
+        }
+    </style>
+</head>
+
+<body class="p-4 md:p-8 flex items-center justify-center">
+
+    <div
+        class="glass w-full max-w-6xl min-h-[85vh] p-6 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 relative overflow-hidden">
+
+        <!-- Decorative Circle -->
+        <div class="absolute -top-20 -right-20 w-64 h-64 bg-white opacity-20 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <!-- Sidebar (Nav) -->
+        <nav class="md:col-span-3 flex flex-col gap-8">
+            <div class="flex items-center gap-3 px-2">
+                <div
+                    class="w-10 h-10 rounded-xl bg-white/50 flex items-center justify-center text-indigo-600 shadow-sm">
+                    <i data-lucide="hexagon" class="w-6 h-6"></i>
+                </div>
+                <h1 class="font-bold text-xl text-indigo-900 tracking-tight">Aero<span class="font-light">Glass</span>
+                </h1>
+            </div>
+
+            <div class="space-y-2">
+                <a href="#"
+                    class="block px-4 py-3 rounded-2xl bg-white/40 text-indigo-900 font-medium shadow-sm flex items-center gap-3">
+                    <i data-lucide="layout" class="w-5 h-5"></i> Dashboard
+                </a>
+                <a href="#"
+                    class="block px-4 py-3 rounded-2xl hover:bg-white/20 text-indigo-800/70 font-medium transition flex items-center gap-3">
+                    <i data-lucide="calendar" class="w-5 h-5"></i> Schedule
+                </a>
+                <a href="#"
+                    class="block px-4 py-3 rounded-2xl hover:bg-white/20 text-indigo-800/70 font-medium transition flex items-center gap-3">
+                    <i data-lucide="book" class="w-5 h-5"></i> Courses
+                </a>
+                <a href="#"
+                    class="block px-4 py-3 rounded-2xl hover:bg-white/20 text-indigo-800/70 font-medium transition flex items-center gap-3">
+                    <i data-lucide="award" class="w-5 h-5"></i> Grants
+                </a>
+            </div>
+
+            <div class="mt-auto glass-card p-4 rounded-2xl flex items-center gap-3">
+                <img src="https://ui-avatars.com/api/?name=Sophie+M+&background=fff&color=8EC5FC"
+                    class="w-10 h-10 rounded-full border-2 border-white shadow-sm">
+                <div>
+                    <p class="text-sm font-bold text-indigo-900">Sophie M.</p>
+                    <p class="text-xs text-indigo-900/60">Art History</p>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="md:col-span-9 flex flex-col gap-8">
+
+            <!-- Quick Ident & Welcome -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-indigo-950">Good Morning, Sophie!</h2>
+                    <p class="text-indigo-900/60">You have 2 classes and 1 assignment pending.</p>
+                </div>
+                <!-- ID Card Badge -->
+                <div class="glass-card px-5 py-2 rounded-full flex items-center gap-2 cursor-pointer group">
+                    <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+                    <span class="text-sm font-semibold text-indigo-900">ID: 8829-AB [Active]</span>
+                    <!-- Hidden ID Preview on Hover could go here -->
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Attendance Circle -->
+                <div class="glass-card p-6 rounded-3xl flex flex-col items-center justify-center text-center relative">
+                    <h3 class="absolute top-6 left-6 text-sm font-bold text-indigo-900/50 uppercase tracking-wide">
+                        Attendance</h3>
+                    <div class="relative w-32 h-32 mt-4">
+                        <svg class="transform -rotate-90 w-32 h-32">
+                            <circle cx="64" cy="64" r="56" stroke="white" stroke-width="12" fill="none"
+                                class="opacity-30" />
+                            <circle cx="64" cy="64" r="56" stroke="#6366f1" stroke-width="12" fill="none"
+                                stroke-dasharray="351.86" stroke-dashoffset="35" stroke-linecap="round" />
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center flex-col">
+                            <span class="text-3xl font-bold text-indigo-900">90%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Cards -->
+                <div class="glass-card p-6 rounded-3xl lg:col-span-2">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-indigo-900 text-lg">Today's Schedule</h3>
+                        <button class="bg-white/50 p-2 rounded-full hover:bg-white transition">
+                            <i data-lucide="plus" class="w-4 h-4 text-indigo-900"></i>
+                        </button>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="bg-white/40 p-4 rounded-xl flex justify-between items-center">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-pink-100 text-pink-500 flex items-center justify-center">
+                                    <i data-lucide="palette" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-indigo-900">Modern Art Theory</p>
+                                    <p class="text-xs text-indigo-900/60">10:00 AM • Room 3B</p>
+                                </div>
+                            </div>
+                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs font-bold">In
+                                Progress</span>
+                        </div>
+
+                        <div class="glass-dark p-4 rounded-xl flex justify-between items-center opacity-70">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-blue-100 text-blue-500 flex items-center justify-center">
+                                    <i data-lucide="globe" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-indigo-900">European History</p>
+                                    <p class="text-xs text-indigo-900/60">01:00 PM • Lecture Hall A</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results/Notice -->
+                <div class="glass-card p-6 rounded-3xl lg:col-span-3 flex flex-col md:flex-row gap-8">
+
+                    <div class="flex-1">
+                        <h3 class="font-bold text-indigo-900 text-lg mb-4">Recent Grades</h3>
+                        <div class="flex gap-4 overflow-x-auto pb-2">
+                            <div class="min-w-[100px] bg-white/30 p-4 rounded-2xl flex flex-col gap-2">
+                                <span class="text-xs font-bold text-indigo-900/50">ART-101</span>
+                                <span class="text-3xl font-bold text-indigo-800">A</span>
+                            </div>
+                            <div class="min-w-[100px] bg-white/30 p-4 rounded-2xl flex flex-col gap-2">
+                                <span class="text-xs font-bold text-indigo-900/50">HIS-200</span>
+                                <span class="text-3xl font-bold text-indigo-800">B+</span>
+                            </div>
+                            <div class="min-w-[100px] bg-white/30 p-4 rounded-2xl flex flex-col gap-2">
+                                <span class="text-xs font-bold text-indigo-900/50">LIT-105</span>
+                                <span class="text-3xl font-bold text-indigo-800">A-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-px bg-white/50 hidden md:block"></div>
+
+                    <div class="flex-1">
+                        <h3 class="font-bold text-indigo-900 text-lg mb-4">Announcements</h3>
+                        <div class="glass-dark p-4 rounded-xl relative">
+                            <div class="absolute -left-1 top-4 w-1 h-8 bg-pink-400 rounded-r-lg"></div>
+                            <p class="font-bold text-sm text-indigo-900">Campus Art Fair Registration</p>
+                            <p class="text-xs text-indigo-900/70 mt-1 line-clamp-2">Deadline for submission is this
+                                Friday. Please bring your portfolio to...</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
