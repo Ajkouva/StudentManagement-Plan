@@ -1,0 +1,1 @@
+You can use this ai chat to ask anything about the project - https://gemini.google.com/gem/1ppZHGdtxU8rqa46EawjAkgV_ARejmude?usp=sharing
